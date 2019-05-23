@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ProductService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:50681/ProductService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:50681/ProductService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:50681/ProductService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Northwind.DTO" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServiceOf_ProductDTO_Listing_InputMessage">
+    <wsdl:part name="parameters" element="tns:Listing" />
+  </wsdl:message>
+  <wsdl:message name="IServiceOf_ProductDTO_Listing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceOf_ProductDTO_Adding_InputMessage">
+    <wsdl:part name="parameters" element="tns:Adding" />
+  </wsdl:message>
+  <wsdl:message name="IServiceOf_ProductDTO_Adding_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceOf_ProductDTO_Updating_InputMessage">
+    <wsdl:part name="parameters" element="tns:Updating" />
+  </wsdl:message>
+  <wsdl:message name="IServiceOf_ProductDTO_Updating_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceOf_ProductDTO_Deleting_InputMessage">
+    <wsdl:part name="parameters" element="tns:Deleting" />
+  </wsdl:message>
+  <wsdl:message name="IServiceOf_ProductDTO_Deleting_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletingResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServiceOf_ProductDTO">
+    <wsdl:operation name="Listing">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceOf_ProductDTO/Listing" message="tns:IServiceOf_ProductDTO_Listing_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceOf_ProductDTO/ListingResponse" message="tns:IServiceOf_ProductDTO_Listing_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Adding">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceOf_ProductDTO/Adding" message="tns:IServiceOf_ProductDTO_Adding_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceOf_ProductDTO/AddingResponse" message="tns:IServiceOf_ProductDTO_Adding_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Updating">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceOf_ProductDTO/Updating" message="tns:IServiceOf_ProductDTO_Updating_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceOf_ProductDTO/UpdatingResponse" message="tns:IServiceOf_ProductDTO_Updating_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Deleting">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceOf_ProductDTO/Deleting" message="tns:IServiceOf_ProductDTO_Deleting_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceOf_ProductDTO/DeletingResponse" message="tns:IServiceOf_ProductDTO_Deleting_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServiceOf_ProductDTO" type="tns:IServiceOf_ProductDTO">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Listing">
+      <soap:operation soapAction="http://tempuri.org/IServiceOf_ProductDTO/Listing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Adding">
+      <soap:operation soapAction="http://tempuri.org/IServiceOf_ProductDTO/Adding" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Updating">
+      <soap:operation soapAction="http://tempuri.org/IServiceOf_ProductDTO/Updating" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Deleting">
+      <soap:operation soapAction="http://tempuri.org/IServiceOf_ProductDTO/Deleting" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ProductService">
+    <wsdl:port name="BasicHttpBinding_IServiceOf_ProductDTO" binding="tns:BasicHttpBinding_IServiceOf_ProductDTO">
+      <soap:address location="http://localhost:50681/ProductService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
